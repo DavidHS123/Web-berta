@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benvinguda</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Afegir Font Awesome -->
+</head>
+<body>
+    <div class="welcome-container">
+        <div>
+            <h1>Benvinguts a l'aniversari de la Berta!</h1>
+            <img src="imatges/imatge2.jpg" alt="Imatge de Benvinguda" class="welcome-image">
+            <div>
+                <button onclick="window.location.href='carta.html'">Cartes</button>
+                <button onclick="window.location.href='galeria.html'">Galeria d'imatges</button>
+            </div>
+        </div>
+    </div>
+    <div class="music-controls">
+        <audio id="music-player" preload="auto"></audio>
+        <div id="current-song">Cançó actual: </div>
+        <div class="timer">
+            <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+        </div>
+        <input type="range" id="progress-bar" value="0" step="1" min="0" max="100" />
+        <input type="range" id="volume-bar" value="100" step="1" min="0" max="100" />
+        <div class="controls">
+            <button onclick="prevSong()"><i class="fas fa-step-backward"></i></button> <!-- Botó Anterior -->
+            <button onclick="playMusic()"><i class="fas fa-play"></i></button> <!-- Botó Reproduir -->
+            <button onclick="pauseMusic()"><i class="fas fa-pause"></i></button> <!-- Botó Pausar -->
+            <button onclick="nextSong()"><i class="fas fa-step-forward"></i></button> <!-- Botó Següent -->
+        </div>
+    </div>
+    <script src="music-player.js"></script>
+</body>
+</html>

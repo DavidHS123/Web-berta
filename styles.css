@@ -1,0 +1,299 @@
+/* Carregar la font local Autography */
+@font-face {
+    font-family: 'Autography';
+    src: url('fonts/font.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rustic Barn';
+    src: url('fonts/Rustic\ Barn.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Autumn';
+    src: url('fonts/Autumn\ in\ September.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Simple Day';
+    src: url('fonts/Simple\ Day.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estils generals */
+body {
+    display: flex; /* Utilitza flexbox per a la disposició */
+    flex-direction: column; /* Col·loca els elements en columna */
+    min-height: 100vh; /* Alçada mínima de la pàgina */
+    margin: 0; /* Sense marges */
+    font-family: 'Simple Day', sans-serif;
+}
+
+/* Estils per la pàgina d'inici */
+.welcome-container {
+    position: relative;
+    flex: 1; /* Fa que la secció de benvinguda ocupi tot l'espai disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, red, black);
+    color: white;
+    text-align: center;
+    padding: 20px; /* Padding per evitar que el text toqui les vores */
+}
+
+.welcome-image {
+    max-width: 100%; /* La imatge no superarà l'ample del contenidor */
+    height: auto; /* Mantindrà la proporció de l'original */
+    max-height: 300px; /* Mida màxima de la imatge */
+    margin: 20px 0; /* Espai a dalt i a baix de la imatge */
+    border-radius: 10px; /* Arrodoneix els extrems de la imatge */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra per a la imatge */
+}
+
+.welcome-container h1 {
+    font-size: 3rem; /* Mida de la font */
+}
+
+.welcome-container button {
+    padding: 1rem 2rem; /* Mida responsive */
+    font-size: 1.2rem;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Simple Day', sans-serif;
+}
+
+.welcome-container button:hover {
+    background-color: #555;
+}
+
+
+.music-controls {
+    display: flex;
+    flex-direction: column; /* Col·loca els botons en columna */
+    align-items: center; /* Centra els botons */
+    justify-content: center; /* Centra verticalment */
+    padding: 10px 0px 10px 0px; /* Espai interior */
+    background-color: #000; /* Fons negre per als controls de música */
+    position: fixed; /* Posició relativa per a col·locar-lo a la part inferior */
+    bottom: 0; /* Col·locar-lo a la part inferior */
+    width: 100%; /* Amplada total */
+}
+
+#current-song {
+    font-size: 1.2rem; /* Mida de la font */
+    margin-bottom: 10px; /* Espai inferior */
+    color: white; /* Color del text */
+}
+
+.controls {
+    display: flex; /* Flex per a alinear els botons */
+}
+
+.music-controls button {
+    margin: 5px; /* Espai entre botons */
+    padding: 10px; /* Espai interior per al botó */
+    font-size: 1.5rem; /* Mida de la font per a icones */
+    color: white;
+    background-color: #1db954; /* Verd característic de Spotify */
+    border: none; /* Sense bordes */
+    border-radius: 50%; /* Botons rodons */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s; /* Animació suau */
+    width: 60px; /* Amplada fixa per als botons */
+    height: 60px; /* Alçada fixa per als botons */
+    display: flex; /* Flex per centrar contingut */
+    align-items: center; /* Centrar verticalment */
+    justify-content: center; /* Centrar horitzontalment */
+}
+
+.music-controls button:hover {
+    background-color: #1aa34a; /* Color més fosc al passar el ratolí */
+    transform: scale(1.05); /* Lleugera animació de creixement al passar el ratolí */
+}
+
+.music-controls button:active {
+    transform: scale(0.95); /* Efecte de contracció al fer clic */
+}
+
+.timer {
+    color: white; /* Color del text */
+    margin: 10px 0; /* Espai entre el temporitzador i la barra de progrés */
+}
+
+#progress-bar {
+    width: 100%; /* Amplada total */
+    margin: 10px 0; /* Espai superior i inferior */
+    cursor: pointer; /* Cursor de mà al passar el ratolí */
+}
+
+#volume-bar {
+    margin: 10px 0; /* Espai superior i inferior */
+    cursor: pointer; /* Cursor de mà al passar el ratolí */
+}
+
+/* Estils per la pàgina de la carta */
+.carta-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, black, red);
+    color: white;
+    padding: 20px; /* Padding per evitar que el text toqui les vores */
+}
+
+.carta-container .content {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%; /* Ample màxim del 90% */
+    text-align: center;
+    overflow: hidden; /* Evita que el contingut surti fora */
+    font-family: 'Simple Day', sans-serif;
+}
+
+.carta-container h1 {
+    font-size: 4rem; /* Mida de la font augmentada */
+    color: black;
+}
+
+.carta-container p {
+    color: #555;
+    line-height: 1.5; /* Espai entre línies */
+}
+
+.carta-container .signature {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
+.carta-container .author {
+    font-weight: bold;
+    color: #333;
+}
+
+.carta-container .chat {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: line-through;
+}
+.carta-container button {
+    margin-top: 20px;
+    padding: 1rem 2rem; /* Mida responsive */
+    font-size: 1.2rem;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Simple Day', sans-serif;
+}
+
+.carta-container button:hover {
+    background-color: #555;
+}
+
+/* Media Queries per a dispositius més petits */
+@media (max-width: 768px) {
+    .welcome-container h1 {
+        font-size: 2.5rem; /* Mida de la font per a pantalles més petites */
+    }
+
+    .carta-container h1 {
+        font-size: 3rem; /* Mida de la font per a pantalles més petites */
+    }
+
+    .welcome-container button,
+    .carta-container button {
+        padding: 0.8rem 1.5rem; /* Mida del botó per a pantalles més petites */
+        font-size: 1rem; /* Mida de la font per a botons més petits */
+    }
+
+    .carta-container .content {
+        padding: 10px; /* Reduïm el padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-container h1 {
+        font-size: 2rem; /* Mida de la font per a mòbils */
+    }
+
+    .carta-container h1 {
+        font-size: 2.5rem; /* Mida de la font per a mòbils */
+    }
+
+    .welcome-container button,
+    .carta-container button {
+        padding: 0.5rem 1rem; /* Mida del botó per a mòbils */
+        font-size: 0.9rem; /* Mida de la font per a botons mòbils */
+    }
+
+    .carta-container .content {
+        padding: 5px; /* Reduïm més el padding */
+    }
+}
+
+.galeria-container {
+    min-height: 100vh; /* Assegura que cobreixi tota la pantalla */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, black, red);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.galeria-container button {
+    margin-top: 20px;
+    padding: 1rem 2rem; /* Mida responsive */
+    font-size: 1.2rem;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Simple Day', sans-serif;
+}
+
+.galeria {
+    display: grid; /* Utilitzem un sistema de quadrícula per a les imatges */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Col·loca les imatges en columnes */
+    gap: 10px; /* Espai entre imatges */
+    max-width: 90%; /* Limitem l'ample màxim */
+}
+
+.galeria img {
+    width: 100%; /* Les imatges ompliran completament les seves cel·les */
+    border-radius: 10px; /* Arrodonim les vores de les imatges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra per a un efecte de profunditat */
+}
+
+.welcome-container button,
+.carta-container button,
+.galeria-container button {
+    transition: transform 0.2s, background-color 0.3s; /* Transició per efecte d'animació */
+}
+
+.welcome-container button:hover,
+.carta-container button:hover,
+.galeria-container button:hover {
+    transform: scale(1.05); /* Efecte de creixement */
+}
