@@ -78,69 +78,47 @@ body {
     background-color: #555;
 }
 
-
-.music-controls {
-    display: flex;
-    flex-direction: column; /* Col·loca els botons en columna */
-    align-items: center; /* Centra els botons */
-    justify-content: center; /* Centra verticalment */
-    padding: 10px 0px 10px 0px; /* Espai interior */
-    background-color: #000; /* Fons negre per als controls de música */
-    position: fixed; /* Posició relativa per a col·locar-lo a la part inferior */
-    bottom: 0; /* Col·locar-lo a la part inferior */
-    width: 100%; /* Amplada total */
+.back-to-top-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+.modal {
+    display: none; /* Ocultat per defecte */
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fons negre amb opacitat */
 }
 
-#current-song {
-    font-size: 1.2rem; /* Mida de la font */
-    margin-bottom: 10px; /* Espai inferior */
-    color: white; /* Color del text */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
 }
 
-.controls {
-    display: flex; /* Flex per a alinear els botons */
-}
-
-.music-controls button {
-    margin: 5px; /* Espai entre botons */
-    padding: 10px; /* Espai interior per al botó */
-    font-size: 1.5rem; /* Mida de la font per a icones */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
     color: white;
-    background-color: #1db954; /* Verd característic de Spotify */
-    border: none; /* Sense bordes */
-    border-radius: 50%; /* Botons rodons */
+    font-size: 40px;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s; /* Animació suau */
-    width: 60px; /* Amplada fixa per als botons */
-    height: 60px; /* Alçada fixa per als botons */
-    display: flex; /* Flex per centrar contingut */
-    align-items: center; /* Centrar verticalment */
-    justify-content: center; /* Centrar horitzontalment */
 }
 
-.music-controls button:hover {
-    background-color: #1aa34a; /* Color més fosc al passar el ratolí */
-    transform: scale(1.05); /* Lleugera animació de creixement al passar el ratolí */
+.galeria img {
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
-
-.music-controls button:active {
-    transform: scale(0.95); /* Efecte de contracció al fer clic */
-}
-
-.timer {
-    color: white; /* Color del text */
-    margin: 10px 0; /* Espai entre el temporitzador i la barra de progrés */
-}
-
-#progress-bar {
-    width: 100%; /* Amplada total */
-    margin: 10px 0; /* Espai superior i inferior */
-    cursor: pointer; /* Cursor de mà al passar el ratolí */
-}
-
-#volume-bar {
-    margin: 10px 0; /* Espai superior i inferior */
-    cursor: pointer; /* Cursor de mà al passar el ratolí */
+.galeria img:hover {
+    transform: scale(1.05);
+    filter: brightness(0.9);
 }
 
 /* Estils per la pàgina de la carta */

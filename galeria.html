@@ -9,6 +9,8 @@
 <body>
 
 <div class="galeria-container">
+    <div class="back-to-top-container"><button onclick="window.location.href='index.html'" class="back-to-top">Tornar a l'inici</button></div>
+    <div class="content">
     <h1>Galeria d'Imatges</h1>
     <div class="galeria">
         <!-- Afegiu les imatges aquí -->
@@ -24,12 +26,84 @@
         <img src="imatges/imatge10.jpg" alt="imatge 10">
         <img src="imatges/imatge11.jpg" alt="imatge 11">
         <img src="imatges/imatge12.jpg" alt="imatge 12">
+        <img src="imatges/imatge13.jpg" alt="imatge 13">
+        <img src="imatges/imatge14.jpg" alt="imatge 14">
+        <img src="imatges/imatge15.jpg" alt="imatge 15">
+        <img src="imatges/imatge16.jpg" alt="imatge 16">
+        <img src="imatges/imatge17.jpg" alt="imatge 17">
+        <img src="imatges/imatge18.jpg" alt="imatge 18">
+        <img src="imatges/imatge19.jpg" alt="imatge 19">
+        <img src="imatges/imatge20.jpg" alt="imatge 20">
+        <img src="imatges/imatge21.jpg" alt="imatge 21">
+        <img src="imatges/imatge22.jpg" alt="imatge 22">
+        <img src="imatges/imatge23.jpg" alt="imatge 23">
+        <img src="imatges/imatge24.jpg" alt="imatge 24">
+        <img src="imatges/imatge25.jpg" alt="imatge 25">
+        <img src="imatges/imatge26.jpg" alt="imatge 26">
+        <img src="imatges/imatge27.jpg" alt="imatge 27">
+        <img src="imatges/imatge28.jpg" alt="imatge 28">
+        <img src="imatges/imatge29.jpg" alt="imatge 29">
+        <img src="imatges/imatge30.jpg" alt="imatge 30">
+        <img src="imatges/imatge31.jpg" alt="imatge 31">
+        <img src="imatges/imatge32.jpg" alt="imatge 32">
+        <img src="imatges/imatge33.jpg" alt="imatge 33">
+        <img src="imatges/imatge34.jpg" alt="imatge 34">
+        <img src="imatges/imatge35.jpg" alt="imatge 35">
+        <img src="imatges/imatge36.jpg" alt="imatge 36">
+        <img src="imatges/imatge37.jpg" alt="imatge 37">
+        <img src="imatges/imatge38.jpg" alt="imatge 38">
+        <img src="imatges/imatge39.jpg" alt="imatge 39">
+        <img src="imatges/imatge40.jpg" alt="imatge 40">
+        <img src="imatges/imatge41.jpg" alt="imatge 41">
+        <img src="imatges/imatge42.jpg" alt="imatge 42">
+        <img src="imatges/imatge43.jpg" alt="imatge 43">
+        <img src="imatges/imatge44.jpg" alt="imatge 44">
+        <img src="imatges/imatge45.jpg" alt="imatge 45">
+        <img src="imatges/imatge46.jpg" alt="imatge 46">
+        <img src="imatges/imatge47.jpg" alt="imatge 47">
+        <img src="imatges/imatge48.jpg" alt="imatge 48">
+        <img src="imatges/imatge49.jpg" alt="imatge 49">
+        <img src="imatges/imatge50.jpg" alt="imatge 50">
+        <img src="imatges/imatge51.jpg" alt="imatge 51">
+        <img src="imatges/imatge52.jpg" alt="imatge 52">
+        <img src="imatges/imatge53.jpg" alt="imatge 53">
+        <img src="imatges/imatge54.jpg" alt="imatge 54">
+        <img src="imatges/imatge55.jpg" alt="imatge 55">
+        <img src="imatges/imatge56.jpg" alt="imatge 56">
+        <img src="imatges/imatge57.jpg" alt="imatge 57">
+        <img src="imatges/imatge58.jpg" alt="imatge 58">
+        <img src="imatges/imatge59.jpg" alt="imatge 59">
+        <img src="imatges/imatge60.jpg" alt="imatge 60">
+        <img src="imatges/imatge61.jpg" alt="imatge 61">
+        <img src="imatges/imatge62.jpg" alt="imatge 62">
+        <img src="imatges/imatge63.jpg" alt="imatge 63">
+        <img src="imatges/imatge64.jpg" alt="imatge 64">
+        <img src="imatges/imatge65.jpg" alt="imatge 65">
+        <img src="imatges/imatge66.jpg" alt="imatge 66">
         <!-- Afegeix més imatges segons sigui necessari -->
     </div>
-    <button onclick="window.location.href='index.html'">Tornar a l'inici</button>
+    </div>
 </div>
-<div id="music-player-container">
-    <iframe src="music-player.html" style="border:none; width:100%; height:234px;"></iframe>
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
 </div>
+
+<script>
+    // Funció per obrir el modal i mostrar la imatge seleccionada
+    document.querySelectorAll('.galeria img').forEach(img => {
+        img.onclick = function() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        };
+    });
+
+    // Funció per tancar el modal quan es fa clic fora de la imatge
+    function closeModal() {
+        document.getElementById('imageModal').style.display = "none";
+    }
+</script>
 </body>
 </html>
